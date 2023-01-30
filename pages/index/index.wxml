@@ -1,0 +1,98 @@
+<view class="top">
+ <swiper-cpn></swiper-cpn>
+  <!-- 导航 -->
+  <view class="content">
+    <view class="box">
+      <text class="iconfont icon-tuijian" bindtap="groomTop"></text>
+      <text>每日推荐</text>
+    </view>
+    <view class="box">
+      <text bindtap="gotoPlaylist" class="iconfont icon-bofanggedan"></text>
+      <text>歌单</text>
+    </view>
+    <view class="box">
+      <text class="iconfont icon-paihangbang"></text>
+      <text>排行榜</text>
+    </view>
+    <view class="box">
+      <text class="iconfont icon-diantai"></text>
+      <text>电台</text>
+    </view>
+    <view class="box">
+      <text class="iconfont icon-dianshizhiboguankanshipinbofangmeiti"></text>
+      <text>直播</text>
+    </view>
+  </view>
+  <!-- 推荐歌曲 -->
+  <view class="songContainer">
+    <!-- 头部区域 -->
+    <view class="header">
+      <text class="title">推荐歌曲</text>
+      <view>
+        <text>为你精心准备</text>
+        <text class="more">更多</text>
+      </view>
+    </view>
+
+    <!-- 内容区域 -->
+    <scroll-view class="commentContainer" enable-flex="true" scroll-x="true">
+      <view class="scoreItem">
+        <image src="https://p1.music.126.net/TgdbdSCTiQys9UoRQfp4xA==/109951167773862113.jpg"></image>
+        <text>[强强联手] 那些一加一大于二的合作"</text>
+      </view>
+      <view class="scoreItem">
+        <image src="https://p1.music.126.net/XB-dSVy5sF9l6M-sbRSJqg==/109951165545379257.jpg"></image>
+        <text>[流行点唱机] 2010年代华语热播 每日30首</text>
+      </view>
+      <view class="scoreItem">
+        <image src="https://p1.music.126.net/Fakz1dHRqjez0eQ5vyWqhg==/109951167746506773.jpg"></image>
+        <text>[爱恋银河] 跨越星河来见你</text>
+      </view>
+      <view class="scoreItem">
+        <image src="https://p1.music.126.net/_arG35AGceLJFvOG2g_ZLw==/109951165876026291.jpg"></image>
+        <text>[强强联手] 那些一加一大于二的合作"</text>
+      </view>
+      <view class="scoreItem">
+        <image src="https://p1.music.126.net/TgdbdSCTiQys9UoRQfp4xA==/109951167773862113.jpg"></image>
+        <text>[华语节奏布鲁斯] 情绪辗转反侧 雾气消散不开</text>
+      </view>
+      <view class="scoreItem">
+        <image src="https://p1.music.126.net/f6Gqhpn3sWv4K-hOj95obA==/109951167882151372.jpg"></image>
+        <text>[华语速爆新歌]队长/叶琼琳带你进入《NUNA 2.0》的故事画面</text>
+      </view>
+
+    </scroll-view>
+  </view>
+  <!-- 排行榜 -->
+  <view class="topList">
+    <!-- 头部部分 -->
+    <view class="header">
+      <text class="title">排行榜</text>
+      <view>
+        <text>热歌风向标</text>
+        <text class="more">更多</text>
+      </view>
+    </view>
+    <!-- 区域内容 -->
+    <swiper class="topListSwiper" previous-margin="50rpx" next-margin="50rpx">
+      <block wx:for="{{songList}}" wx:for-item="songs">
+        <swiper-item>
+          <view class="swiperItem">
+            <view class="musicTitle">{{songs.name}}</view>
+            <block wx:for="{{songs.songs}}" wx:for-item="s">
+              <view class="musicItem">
+                <image src="{{s.imgUrl}}"></image>
+                <text class="count">{{s.id}}</text>
+                <text class="musicName">{{s.musicName}}</text>
+                <view class="bb">
+                  <text class="iconfont icon-bofang2"></text>
+                </view>
+              </view>
+            </block>
+          </view>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+
+</view>

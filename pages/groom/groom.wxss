@@ -1,0 +1,129 @@
+.groomContainer{
+  width: 100%;
+  height: 100%;
+}
+/* 设置图片样式 */
+.imgContainer{
+  width: 100%;
+  height: 300rpx;
+}
+.imgContainer image{
+  width: 100%;
+  height: 100%;
+}
+/* 设置图标 */
+.titleContainer{
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.titleContainer .iconfont{
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 50%;
+  background-color: red;
+  text-align: center;
+  line-height: 50rpx;
+  font-size: 25rpx;
+  color: white;
+  margin: 10rpx 20rpx;
+}
+.titleContainer text{
+  font-size: 32rpx;
+  font-weight: bold;
+}
+/* 搜索框样式 */
+.search_area{
+  width: 100%;
+  height: 110rpx;
+  background: red;
+  /* 弹性盒子布局 */
+  display: flex;
+  margin-top: 5rpx;
+}
+/* 存放input框的样式 */
+.search_input{
+  width: 600rpx;
+  height: 110rpx;
+  background: white;
+}
+.search_input input{
+  width: 600rpx;
+  height: 105rpx;
+  border: 1rpx solid red;
+}
+.searche_button{
+  width: 160rpx;
+  height: 110rpx;
+  font-size: 40rpx;
+  text-align: center;
+  line-height: 110rpx;
+  color: white;
+}
+
+/* 歌曲内容 */
+.musicContainer{
+  width: 100%;
+  height: 150rpx;
+  background: silver;
+  display: flex;
+  margin-top: 10rpx;
+}
+.left{
+  width: 150rpx;
+  height: 150rpx;
+}
+.left image{
+  width: 140rpx;
+  height:140rpx;
+  margin: 5rpx;
+  border-radius: 8%; /*圆角边框*/
+}
+.songName{
+  font-size: 35rpx;
+  color: white;
+  margin-top: 20rpx;
+  padding-left: 30rpx;
+  /* 文本超出时不换行显示 */
+  white-space: nowrap;
+  /* 溢出时隐藏 */
+  overflow: hidden;
+  /* 文本超出显示省略号 */
+  text-overflow: ellipsis;
+}
+.singerName{
+  font-size: 30rpx;
+  color: white;
+  padding-left: 30rpx;
+  margin-top: 20rpx;
+  /* 文本超出时不换行显示 */
+  white-space: nowrap;
+  /* 溢出时隐藏 */
+  overflow: hidden;
+  /* 文本超出显示省略号 */
+  text-overflow: ellipsis;
+}
+.center{
+  width: 450rpx;
+  height: 150rpx;
+  position: relative;
+}
+/* mv图标 */
+.mv{
+    width: 80rpx;
+    height: 80rpx;
+    position: absolute;
+    right: 0rpx;
+    top: 0rpx;
+}
+.right{
+  width: 150rpx;
+  height: 150rpx;
+  line-height: 150rpx;
+  text-align: center;
+}
+.right image{
+  width: 100rpx;
+  height: 100rpx;
+  margin: 30rpx;
+}

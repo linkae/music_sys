@@ -1,0 +1,111 @@
+
+/* 导航样式 */
+.content{
+  display: flex;
+  padding: 10rpx;
+}
+.box{
+  display: flex;
+  flex-direction: column; /*横向排列*/
+  align-items: center;
+  width: 20%;
+}
+/* 给图标设置样式 */
+.box .iconfont{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  background-color: red;
+  line-height: 100rpx;
+  text-align: center;
+  font-size: 50rpx;
+  color: white;
+  margin: 20rpx 0rpx;
+}
+.box text{
+  font-size: 26rpx;
+}
+/* 推荐歌曲样式 */
+.songContainer{
+  padding: 10rpx;
+}
+.header{
+  padding-bottom: 10rpx;
+  font-size: 30rpx;
+}
+.header .title{
+  line-height: 80rpx;
+  color: #666;
+}
+.header .more{
+  float: right; /*右浮动*/
+  font-size: 26rpx;
+  padding: 20rpx 20rpx;
+}
+/* 内容区域样式 */
+.commentContainer{
+  display: flex;
+  height: 300rpx;
+}
+.scoreItem{
+  width: 200rpx;
+  margin-left: 20rpx;
+}
+.scoreItem image{
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 10rpx;
+}
+.scoreItem text{
+  font-size: 26rpx;
+  /* 单行文本溢出隐藏 */
+  /* display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; */
+  /* 多行文本溢出隐藏 */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;/*设置对其模式*/
+  -webkit-line-clamp: 2; /*设置多行的行数*/
+}
+/* 排行榜 */
+
+.topList{
+  padding: 10rpx;
+}
+.topListSwiper{
+  height: 400rpx; /*swiper设置默认高度*/
+}
+.swiperItem .musicTitle{
+  font-size: 30rpx;
+  line-height: 80rpx;
+}
+
+.musicItem{
+  display: flex;
+  margin-bottom: 20rpx;
+}
+.musicItem image{
+  width: 100rpx;
+  height: 85rpx;
+  border-radius: 6rpx;
+}
+.musicItem .count{
+  width: 100rpx;
+  height: 85rpx;
+  line-height: 85rpx;
+  text-align: center;
+}
+.musicItem .musicName{
+  width: 300rpx;
+  height: 85rpx;
+  line-height: 85rpx;
+}
+.musicItem .bb{
+  width: 100rpx;
+  height: 85rpx;
+  line-height: 85rpx;
+  text-align: center;
+}

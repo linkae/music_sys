@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "swiper-cpn":"/components/swiper-cpn/swiper-cpn"
+  }
+}

@@ -1,0 +1,9 @@
+<form bindsubmit='formSubmit'>
+    <view class="playlist-container">
+        <input name='playName' type="text" placeholder="歌单名称" class="play-name"/>
+        <input name="playDesc" type="text" placeholder="歌单描述" class="play-desc"/>
+        <image bindtap="uploadImage" class="upload-image" src="{{baseUrl+playSrc}}"></image>
+        <view class="tips">点击图片</view>
+        <button class="submit" formType="submit">提交</button>
+    </view>
+</form>

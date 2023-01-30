@@ -1,0 +1,62 @@
+<view class="groomContainer">
+<!-- 图片 -->
+<view class="imgContainer">
+  <image src="https://p1.music.126.net/vHkHMXgfoHCet-9w2bwY6Q==/109951167894025217.jpg"></image>
+</view>
+
+<!-- 文字 -->
+<view class="songContainer">
+  <view class="titleContainer">
+    <text class="iconfont icon-icon-"></text>
+    <text>音乐搜索</text>
+  </view>
+</view>
+
+<!-- 搜索框 -->
+<view class="search_area">
+  <view class="search_input">
+  <!-- 
+bindinput : 输入框内容改变就会触发
+bindtap:单击事件
+   -->
+    <input type="text" bindinput="getKeyWord"></input>
+  </view>
+  <view class="searche_button" bindtap="do_search">
+    搜索
+  </view>
+
+</view>
+
+<!-- 歌曲内容 -->
+<block wx:for="{{songs}}" wx:for-item="s" wx:for-index="i">
+
+  <view class="musicContainer">
+<!-- 左侧图片 -->
+  <view class="left">
+    <image src="{{picUrl[i]}}"></image>
+  </view>
+  <!-- 中间部分 -->
+  <view class="center">
+    <view class="songName">{{s.name}}</view>
+    <view class="singerName">
+      {{s.artists[0].name}}-《{{s.name}}》    
+    </view>
+    <navigator url="/pages/mv/mv?id={{s.mvid}}">
+        <image wx:if="{{s.mvid!=0}}" class="mv" src="/images/mv.png"></image>
+    </navigator>
+  </view>
+  <!-- 右边播放按钮 -->
+  <view class="right">
+  <!-- 
+    页面参数传值通过data-
+
+   -->
+      <image src="/images/play.png" bindtap="gotoPlay" data-id="{{s.id}}"></image>
+    </view>
+
+</view>
+
+</block>
+
+
+</view>

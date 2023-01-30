@@ -1,0 +1,18 @@
+<swiper-cpn></swiper-cpn>
+<view class="playlist-container">
+    <!-- 创建歌单 -->
+    <navigator url="/pages/addPlaylist/addPlaylist">
+        <view class="create">创建歌单</view>
+    </navigator>
+    <!-- 歌单列表 -->
+    <view wx:for="{{playlist}}" wx:for-item="play" class="playlist-item">
+        <view class="left">
+            <image src="{{baseUrl+play.playImgPath}}"></image>
+        </view>
+        <view class="right">
+            <view class="playlist-name">{{play.playName}}</view>
+            <view class="playlist-desc">{{play.playDesc}}</view>
+        </view>
+    </view>
+   
+</view>

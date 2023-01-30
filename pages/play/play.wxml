@@ -1,0 +1,81 @@
+<view class="play-container">
+<!-- 背景图 -->
+    <image class="bg-image" src="{{song.album.picUrl}}"></image>
+    <!-- 歌曲名 -->
+    <view class="songName">{{song.name}}</view>
+    <!-- 中间区域:歌曲封面 歌词滚动 -->
+    <swiper class="middle">
+        <!-- 歌曲封面 -->
+        <swiper-item>
+            <view class="image-container">
+            <!-- 
+                animation-play-state：动画的播放状态，
+                取值running(运行)和paused(暂停)
+             -->
+                <image style="animation-play-state:{{state=='play'?'running':'paused'}}" src="{{song.album.picUrl}}"></image>
+            </view>
+        </swiper-item>
+        <!-- 歌词滚动区域:内容超出才能滚动
+            scroll-top:取值应该是30的倍数
+         -->
+        <swiper-item>
+            <scroll-view  scroll-top="{{scrollTop}}" scroll-y class="lyric-container">
+            <!-- 遍历歌词的二维数组 
+                currentIndex:当前正在播放的行号
+            -->
+                <text  class="{{currentIndex==i?'active':''}}"  
+                 wx:for="{{lyricArray}}" 
+                 wx:for-item="lyric" wx:for-index="i">{{lyric[1]}}</text>
+            </scroll-view>
+        </swiper-item>
+        <swiper-item>
+            <!-- 评论区 -->
+            <scroll-view scroll-y class="comment-container">
+                <view wx:for="{{commentList}}" wx:for-item="comment" class="comment-item">
+                    <view class="userinfo">
+                        <image src="{{comment.user.avatarUrl}}"></image>
+                        <view>{{comment.user.nickname}}</view>
+                    </view>
+                    <view class="comment-text">{{comment.content}}</view>
+                </view>
+            </scroll-view>
+        </swiper-item>
+    </swiper>
+    <!-- 进度条 -->
+    <view wx:if="{{endTime}}" class="progress">
+        <view class="playtime">{{playTime}}</view>
+        <!-- max:音频的总时长 
+            bindchange:完成一次拖动后触发的事件
+        -->
+        <slider bindchange="dragSlider"	 min="0" value="{{currentTime}}" max="{{duration}}" activeColor='#c20c0c' block-size='12'></slider>
+        <view class="endtime">{{endTime}}</view>
+    </view>
+    <!-- 控制栏 -->
+    <view class="controls">
+        <image src="/images/list.png"></image>
+        <image bindtap="prevSong" src="/images/prev.png"></image>
+        <!-- 添加点击事件，控制暂停或播放 -->
+        <!-- 
+            state=='play':播放状态 ====》pause.png
+            state!='play':暂停状态 ====》play.png
+            三元运算符: boolean表达式?'结果1':"结果2"，表达式为真，取结果1，表达式为假，取结果2
+         -->
+        <image bindtap="pauseOrPlay" src="/images/{{state=='play'?'pause':'play'}}.png"></image>
+        <image src="/images/next.png"></image>
+        <image bindtap="showPlayList" src="/images/collect.png"></image>
+    </view>
+
+    <scroll-view style="display:{{display}}" scroll-y class="playlist-container">
+        <!-- 歌单列表 -->
+        <view wx:for-item="play" wx:for="{{playlist}}"  class="playlist-item">
+            <view class="left">
+                <image src="{{baseUrl+play.playImgPath}}"></image>
+            </view>
+            <view class="right">
+                <view class="playlist-name">{{play.playName}}</view>
+                <view class="playlist-desc">{{play.playDesc}}</view>
+            </view>
+        </view>
+    </scroll-view>
+
+</view>
